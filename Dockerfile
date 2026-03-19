@@ -11,17 +11,9 @@ RUN apt install -y \
     libeigen3-dev
 
 # Workspace setup
-WORKDIR /workspace/src/unitree_ros2
-
-COPY . .
-
-# Build all packages
 WORKDIR /workspace
 
 SHELL ["/bin/bash", "-c"]
-
-RUN source /opt/ros/humble/setup.bash && \
-    colcon build --parallel-workers $(( $(nproc) / 2 ))
 
 COPY entrypoint.sh /entrypoint.sh
 
