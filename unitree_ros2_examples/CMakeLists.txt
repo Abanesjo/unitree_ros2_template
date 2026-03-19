@@ -137,23 +137,23 @@ install(TARGETS
         read_wireless_controller
         go2_sport_client
         go2_stand_example
-        DESTINATION)
+        DESTINATION lib/${PROJECT_NAME})
 
 
-install(TARGETS go2_robot_state_client)
-install(TARGETS g1_arm_sdk_dds_example)
-install(TARGETS g1_arm_action_example)
-install(TARGETS g1_dex3_example)
-install(TARGETS g1_loco_client_example)
-install(TARGETS g1_ankle_swing_example)
+install(TARGETS go2_robot_state_client DESTINATION lib/${PROJECT_NAME})
+install(TARGETS g1_arm_sdk_dds_example DESTINATION lib/${PROJECT_NAME})
+install(TARGETS g1_arm_action_example DESTINATION lib/${PROJECT_NAME})
+install(TARGETS g1_dex3_example DESTINATION lib/${PROJECT_NAME})
+install(TARGETS g1_loco_client_example DESTINATION lib/${PROJECT_NAME})
+install(TARGETS g1_ankle_swing_example DESTINATION lib/${PROJECT_NAME})
 
 if(yaml-cpp_FOUND)
     if (${yaml-cpp_VERSION} VERSION_GREATER_EQUAL "0.6")
-      install(TARGETS g1_dual_arm_example)
+      install(TARGETS g1_dual_arm_example DESTINATION lib/${PROJECT_NAME})
     endif()
 endif()
 
-install(TARGETS g1_audio_client_example)
+install(TARGETS g1_audio_client_example DESTINATION lib/${PROJECT_NAME})
 
 
 
